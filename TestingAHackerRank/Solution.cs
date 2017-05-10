@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TestingAHackerRank
 {
-    class Program
+    public class Solution
     {
-        static void Main(string[] args)
+        public static string PangramSolution(string sentence)
         {
-            var input = Console.ReadLine().ToLower().Replace(" ", String.Empty);
+            var input = sentence.ToLower().Replace(" ", String.Empty);
 
             var characters = new Dictionary<char, int>();
             foreach (var item in input)
@@ -26,12 +26,17 @@ namespace TestingAHackerRank
             }
             if (characters.Count() == 26)
             {
-                Console.WriteLine("pangram");
+                return "pangram";
             }
             else
             {
-                Console.WriteLine("not pangram");
+                return "not pangram";
             }
+        }
+
+        static void Main(string[] args)
+        {
+            
         }
     }
 }
